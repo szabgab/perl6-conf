@@ -14,7 +14,7 @@ TBD.
 
 our $VERSION = '0.04';
 
-use Perl6::Conf::Grammar;
+# use Perl6::Conf::Grammar;
 
 has $!in;
 
@@ -26,12 +26,12 @@ method from_file($file_path) {
     return self.from_string( slurp($file_path) );
 }
 
-#method parse( $in? ) {
+# method parse( $in? ) {
     # TODO: If used .parse fall tests, fix it! ????
-    #($in || $!in) ~~ /<Perl6::Conf::Grammar::TOP>/;
-    #die("No match") unless $/;
-    #return $/<Perl6::Conf::Grammar::TOP><contents>;
-#}
+    # ($in || $!in) ~~ /<Perl6::Conf::Grammar::TOP>/;
+    # die("No match") unless $/;
+    # return $/<Perl6::Conf::Grammar::TOP><contents>;
+# }
 
 method parse {
 	my %data;
@@ -52,7 +52,7 @@ method parse {
 	}
 	return %data;
 }
-
+# 
 # Copyright 2009 Gabor Szabo. L<http://www.szabgab.com/>
 # License:
 # This program is free software; you can redistribute it and/or
