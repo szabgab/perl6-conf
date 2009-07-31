@@ -9,7 +9,7 @@ grammar Perl6::Conf::Grammar {
     }
   
     token section {
-        <header> [<comment>* <entry>]*
+        <header> [<comment> | <entry>]*
     }
     token header {
         ^^ \[ <-[\]]>* \] $$ \n?
