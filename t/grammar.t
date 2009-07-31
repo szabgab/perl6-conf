@@ -2,13 +2,13 @@ use v6;
 
 use Test;
 
-plan => 20;
+plan => 21;
 
 use Perl6::Conf::Grammar;
 ok(1, 'loaded Perl6::Conf::Grammar and still alive');
 
-# Perl6::Conf::Grammar.parse('');
-# is($/, '', 'empty string is ok');
+Perl6::Conf::Grammar.parse('');
+is($/, '', 'empty string is ok');
 
 Perl6::Conf::Grammar.parse('abc');
 is($/, '', 'abc does not match');

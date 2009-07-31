@@ -4,10 +4,16 @@ grammar Perl6::Conf::Grammar {
         <comment>* <section>* <comment>*
     }
     token comment {
-        ^^ <ws> [ '#' \N* ]? $$ \n? 
-#        {{ print "comment\n" }}
+        <el> | <cl>
     }
-  
+    token el {
+        ^^ [ \s | \t | \n ]+ $$
+#        {{ print "el\n" }}
+    }
+    token cl {
+        ^^ [\s | \t ]* [ '#' \N* ] $$ \n?
+#        {{ print "cl\n" }}
+    }
     token section {
         <header> [<comment> | <entry>]*
     }
