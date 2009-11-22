@@ -34,9 +34,13 @@ my $str_4 = "#nospace comment  \n";
 Perl6::Conf::Grammar.parse($str_4);
 is($/, $str_4, 'nospace comment');
 
+my $str_5 =  "     ";
+Perl6::Conf::Grammar.parse($str_5);
+is($/, $str_5, 'empty line');
+
 #my $str_5 =  "     \n";
 #Perl6::Conf::Grammar.parse($str_5);
-#is($/, $str_5, 'empty line');
+#is($/, $str_5, 'empty line with newline');
 
 my $str_6 = "# one comment\n\n# comment 2";
 Perl6::Conf::Grammar.parse($str_6);
